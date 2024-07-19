@@ -1,5 +1,4 @@
 <!-- list-student.blade.php -->
-
 <div>
     <div class="container-xxl">
         <div class="row align-items-center">
@@ -27,6 +26,7 @@
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
+                                    <th scope="col">#</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone Number</th>
@@ -40,8 +40,10 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @php($count = 1)
                                 @forelse($students as $student)
                                     <tr>
+                                        <th scope="row">{{ $count++ }}</th>
                                         <td>{{ $student->name }}</td>
                                         <td>{{ $student->email }}</td>
                                         <td>{{ $student->phoneNumber }}</td>
@@ -55,7 +57,7 @@
                                             <a href="{{ route('admin.student.edit', $student->id) }}" class="btn btn-sm btn-primary">
                                                 <i class="icofont-edit text-success"></i>
                                             </a>
-                                            <button wire:click="delete('{{ $student->student_id }}')" onclick="return confirm('Are you sure you want to delete this student?')" class="btn btn-sm btn-danger">
+                                            <button wire:click="delete('{{ $student->student_id }}')" class="btn btn-sm btn-danger">
                                                 <i class="icofont-ui-delete text-danger"></i>
                                             </button>
                                         </td>

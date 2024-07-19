@@ -14,7 +14,7 @@
                             <p class="text-muted">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
                         </div>
                         <div class="text-center mt-4">
-                            <a href="#" class="btn btn-primary">Go to Home</a>
+                            <a href="{{ url()->previous() }}" class="btn btn-primary">Go to Home</a>
                         </div>
                     </div>
                 </div>

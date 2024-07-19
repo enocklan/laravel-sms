@@ -62,7 +62,7 @@ Route::group([
         'prefix' => 'students'
     ], function (){
        Route::get('add', AddStudent::class)->name('admin.student.add');
-       Route::get('edit', EditStudent::class)->name('admin.student.edit');
+       Route::get('edit/{studentId}', EditStudent::class)->name('admin.student.edit');
        Route::get('list', ListStudent::class)->name('admin.student.list');
     });
 });

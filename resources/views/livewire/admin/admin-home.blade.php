@@ -7,10 +7,12 @@
                 <div class="col">
                     <div class="alert-success alert mb-0">
                         <div class="d-flex align-items-center">
-                            <div class="avatar rounded no-thumbnail bg-success text-light"><i class="fa fa-dollar fa-lg"></i></div>
+                            <div class="avatar rounded no-thumbnail bg-success text-light">
+                                <i class="icofont-student-alt fs-3"></i>
+                            </div>
                             <div class="flex-fill ms-3 text-truncate">
-                                <div class="h6 mb-0">Revenue</div>
-                                <span class="small">$18,925</span>
+                                <div class="h6 mb-0">Students</div>
+                                <span class="small">{{ $studentCount }}</span>
                             </div>
                         </div>
                     </div>
@@ -18,9 +20,9 @@
                 <div class="col">
                     <div class="alert-danger alert mb-0">
                         <div class="d-flex align-items-center">
-                            <div class="avatar rounded no-thumbnail bg-danger text-light"><i class="fa fa-credit-card fa-lg"></i></div>
+                            <div class="avatar rounded no-thumbnail bg-danger text-light"><i class="icofont-teacher fs-3 "></i></div>
                             <div class="flex-fill ms-3 text-truncate">
-                                <div class="h6 mb-0">Expense</div>
+                                <div class="h6 mb-0">Teachers</div>
                                 <span class="small">$11,024</span>
                             </div>
                         </div>
@@ -73,11 +75,11 @@
                                     <div class="card">
                                         <div class="card-body py-xl-4 py-3 d-flex flex-wrap align-items-center justify-content-between">
                                             <div class="left-info">
-                                                <span class="text-muted">Customers</span>
-                                                <div><span class="fs-6 fw-bold me-2">14,208</span></div>
+                                                <span class="text-muted">Students</span>
+                                                <div><span class="fs-6 fw-bold me-2">{{ $studentCount }}</span></div>
                                             </div>
                                             <div class="right-icon">
-                                                <i class="icofont-student-alt fs-3 color-light-orange"></i>
+                                                <i class="icofont-student-alt fs-3 color-light-black"></i>
                                             </div>
                                         </div>
                                     </div>

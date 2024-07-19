@@ -9,7 +9,7 @@
         </a>
         <!-- Menu: main ul -->
         <ul class="menu-list flex-grow-1 mt-3">
-            <li><a class="m-link active" href="{{route('home')}}"><i class="icofont-home fs-5"></i> <span>Dashboard</span></a></li>
+            <li><a class="m-link" href="{{route('home')}}"><i class="icofont-home fs-5"></i> <span>Dashboard</span></a></li>
 
             <li class="collapsed">
                 <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu-account" href="#">
