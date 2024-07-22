@@ -7,7 +7,7 @@
                     <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
                         <h3 class="fw-bold mb-0">Students List</h3>
                         <div class="col-md-1">
-                            <a href="{{ route('admin.student.add') }}" class="btn btn-outline-primary">
+                            <a href="{{ route('admin.teacher.add') }}" wire:navigate class="btn btn-outline-primary">
                                 <span class="fa fa-plus-square"></span> Add
                             </a>
                         </div>
@@ -23,57 +23,54 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0" style="width: 100%;">
+                            <table class="table table-striped">
                                 <thead>
                                 <tr>
                                     <th scope="col">#</th>
                                     <th>Name</th>
                                     <th>Email</th>
+                                    <th>Employee Id</th>
                                     <th>Phone Number</th>
-                                    <th>Student ID</th>
-                                    <th>Course</th>
-                                    <th>Year of Study</th>
                                     <th>Department</th>
-                                    <th>Date of Birth</th>
+                                    <th>Date of Employment</th>
                                     <th>Address</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @php($count = 1)
-                                @forelse($students as $student)
+                                @forelse($teachers as $teacher)
                                     <tr>
                                         <th scope="row">{{ $count++ }}</th>
-                                        <td>{{ $student->name }}</td>
-                                        <td>{{ $student->email }}</td>
-                                        <td>{{ $student->phoneNumber }}</td>
-                                        <td>{{ $student->student_id }}</td>
-                                        <td>{{ $student->course }}</td>
-                                        <td>{{ $student->year_of_study }}</td>
-                                        <td>{{ $student->department }}</td>
-                                        <td>{{ $student->date_of_birth }}</td>
-                                        <td>{{ $student->address }}</td>
+                                        <td>{{ $teacher->name }}</td>
+                                        <td>{{ $teacher->email }}</td>
+                                        <td>{{ $teacher->employee_id }}</td>
+                                        <td>{{ $teacher->phoneNumber }}</td>
+                                        <td>{{ $teacher->department }}</td>
+                                        <td>{{ $teacher->date_of_employment }}</td>
+                                        <td>{{ $teacher->address }}</td>
                                         <td>
-                                            <a href="{{ route('admin.student.edit', $student->id) }}" class="btn btn-sm btn-primary">
+                                            <a href="{{ route('admin.teacher.edit', $teacher->id) }}" class="btn btn-sm btn-primary">
                                                 <i class="icofont-edit text-success"></i>
                                             </a>
-                                            <button wire:click="delete('{{ $student->student_id }}')" class="btn btn-sm btn-danger">
+                                            <button wire:click="delete('{{ $teacher->employee_id }}')" class="btn btn-sm btn-danger">
                                                 <i class="icofont-ui-delete text-danger"></i>
                                             </button>
                                         </td>
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="11" class="text-center">No students found</td>
+                                        <td colspan="10" class="text-center">No Teachers found</td>
                                     </tr>
                                 @endforelse
                                 </tbody>
                             </table>
                         </div>
-                        {{ $students->links() }}
+{{--                        {{ $teachers->links() }}--}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>

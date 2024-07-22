@@ -36,9 +36,8 @@
                     <i class="icofont-teacher fs-5"></i> <span>Teachers</span> <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span></a>
                 <!-- Menu: Sub menu ul -->
                 <ul class="sub-menu collapse" id="menu-teachers">
-                    <li><a class="ms-link" href="#">Teachers List</a></li>
-                    <li><a class="ms-link" href="#">Add Teacher</a></li>
-                    <li><a class="ms-link" href="#">Edit Teacher</a></li>
+                    <li><a class="ms-link" href="{{route('admin.teacher.add')}}">Add Teacher</a></li>
+                    <li><a class="ms-link" href="{{route('admin.teacher.list')}}">Teachers List</a></li>
                 </ul>
             </li>
 

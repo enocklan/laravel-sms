@@ -2,12 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends Factory<User>
  */
 class UserFactory extends Factory
 {
@@ -24,11 +25,25 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
+            'id' => $this->faker->uuid,
+            'student_id' => $this->faker->unique()->randomNumber(5, true),
+            'name' => $this->faker->name,
+            'phoneNumber' => $this->faker->phoneNumber,
+            'email' => $this->faker->unique()->safeEmail,
+            'email_verified_at' => $this->faker->optional()->dateTime,
+            'password' => hash::make('password'), // use Hash::make() for better security
+            'is_active' => $this->faker->boolean(90),
+            'is_otp_verified' => $this->faker->boolean(50),
+            'has_to_change_password' => $this->faker->boolean(10),
+            'course' => $this->faker->optional()->word,
+            'department' => $this->faker->optional()->word,
+            'year_of_study' => $this->faker->optional()->randomElement(['First', 'Second', 'Third', 'Fourth']),
+            'date_of_birth' => $this->faker->optional()->date,
+            'address' => $this->faker->optional()->address,
             'remember_token' => Str::random(10),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'deleted_at' => null,
         ];
     }
 

@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Students;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
@@ -69,7 +70,7 @@ class EditStudent extends Component
             'department' => $this->department,
             'date_of_birth' => $this->date_of_birth,
             'address' => $this->address,
-            'password' => $this->password ? bcrypt($this->password) : $student->password,
+            'password' => $this->password ? hash::make($this->password) : $student->password,
         ]);
 
         $this->alert('success', 'Success', [
@@ -79,7 +80,6 @@ class EditStudent extends Component
             'text' => 'Student updated successfully.',
             'timerProgressBar' => true,
         ]);
-
 //        return redirect()->route('admin.student.edit');
     }
 
