@@ -20,6 +20,10 @@
                 <div class="card mb-3">
                     <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
                         <h6 class="mb-0 fw-bold">Student Information</h6>
+                        <div class="col-md-1">
+                            <a href="#" wire:navigate class="btn btn-outline-primary">
+                                <span class="fa fa-download"> Download</span></a>
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

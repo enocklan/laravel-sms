@@ -43,12 +43,13 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="alert-info alert mb-0">
-                        <div class="d-flex align-items-center">
-                            <div class="avatar rounded no-thumbnail bg-info text-light"><i class="fa fa-shopping-bag" aria-hidden="true"></i></div>
+                    <div class="card mb-0" style="background-color: rgba(171,171,171,0.43);">
+                        <div class="d-flex align-items-center p-3">
+                            <div class="avatar rounded no-thumbnail bg-black text-white">
+                                <i class="icofont-layers fs-3 color-black"></i></div>
                             <div class="flex-fill ms-3 text-truncate">
-                                <div class="h6 mb-0">New StoreOpen</div>
-                                <span class="small">8,925</span>
+                                <div class="h6 mb-0"><b>Departments</b></div>
+                                <span class="small">{{$departmentCount}}</span>
                             </div>
                         </div>
                     </div>
@@ -105,11 +106,11 @@
                                         <div class="card-body py-xl-4 py-3 d-flex flex-wrap align-items-center justify-content-between">
                                             <div class="left-info">
                                                 <span class="text-muted">Departments</span>
-                                                <div><span class="fs-6 fw-bold me-2">$1770</span></div>
+                                                <div><span class="fs-6 fw-bold me-2">{{$departmentCount}}</span></div>
                                             </div>
                                             <div class="right-icon">
                                                 <i class="icofont-layers fs-3 color-santa-fe"></i>
-                                                <i class="fas fa-layer-group"></i>
+{{--                                                <i class="fas fa-layer-group"></i>--}}
                                             </div>
                                         </div>
                                     </div>
@@ -149,45 +150,6 @@
                                             </div>
                                             <div class="right-icon">
                                                 <i class="icofont-users-social fs-3 color-light-success"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-                                    <div class="card">
-                                        <div class="card-body py-xl-4 py-3 d-flex flex-wrap align-items-center justify-content-between">
-                                            <div class="left-info">
-                                                <span class="text-muted">Total Products</span>
-                                                <div><span class="fs-6 fw-bold me-2">184511</span></div>
-                                            </div>
-                                            <div class="right-icon">
-                                                <i class="icofont-bag fs-3 color-light-orange"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-                                    <div class="card">
-                                        <div class="card-body py-xl-4 py-3 d-flex flex-wrap align-items-center justify-content-between">
-                                            <div class="left-info">
-                                                <span class="text-muted">Top Selling Item</span>
-                                                <div><span class="fs-6 fw-bold me-2">122</span></div>
-                                            </div>
-                                            <div class="right-icon">
-                                                <i class="icofont-star fs-3 color-lightyellow"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-                                    <div class="card">
-                                        <div class="card-body py-xl-4 py-3 d-flex flex-wrap align-items-center justify-content-between">
-                                            <div class="left-info">
-                                                <span class="text-muted">Dealership</span>
-                                                <div><span class="fs-6 fw-bold me-2">32</span></div>
-                                            </div>
-                                            <div class="right-icon">
-                                                <i class="icofont-handshake-deal fs-3 color-lavender-purple"></i>
                                             </div>
                                         </div>
                                     </div>

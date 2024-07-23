@@ -17,7 +17,7 @@
 
 </head>
 <body>
-<div id="ebazar-layout" class="theme-cyan">
+<div id="ebazar-layout" class="theme-neutral">
 
     {{--  Start:Sidebar--}}
     @if(request()->is('admin/*'))

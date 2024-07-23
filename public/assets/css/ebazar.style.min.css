@@ -22448,8 +22448,8 @@ fieldset:disabled .btn {
     --primary-gradient: linear-gradient(45deg, #5a2ee2, #484c7f)
 }
 [class="theme-neutral"] {
-    --primary-color: grey; /* Neutral gray */
-    --secondary-color: #d8d419; /* Light gray */
+    --primary-color: #274bdb; /* Neutral gray */
+    --secondary-color: ; /* Light gray */
     -chart-color1: #484c7f;
     --chart-color2: #d8d419;
     --chart-color3: #7394b9;

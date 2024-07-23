@@ -42,6 +42,18 @@
             </li>
 
             <li class="collapsed">
+                <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu-departments" href="#">
+                    <i class="icofont-layers fs-5"></i> <span>Departments</span>
+                    <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span>
+                </a>
+                <!-- Menu: Sub menu ul -->
+                <ul class="sub-menu collapse" id="menu-departments">
+                    <li><a class="ms-link" href="{{ route('admin.department.add') }}">Add Department</a></li>
+                    <li><a class="ms-link" href="{{ route('admin.department.list') }}">List Departments</a></li>
+                </ul>
+            </li>
+
+            <li class="collapsed">
                 <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu-classes" href="#">
                     <i class="icofont-ui-copy fs-5"></i> <span>Classes</span> <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span></a>
                 <!-- Menu: Sub menu ul -->

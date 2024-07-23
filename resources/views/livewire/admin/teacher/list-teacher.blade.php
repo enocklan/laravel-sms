@@ -5,7 +5,7 @@
             <div class="col mb-4">
                 <div class="card border-0">
                     <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
-                        <h3 class="fw-bold mb-0">Students List</h3>
+                        <h3 class="fw-bold mb-0">Teachers List</h3>
                         <div class="col-md-1">
                             <a href="{{ route('admin.teacher.add') }}" wire:navigate class="btn btn-outline-primary">
                                 <span class="fa fa-plus-square"></span> Add
@@ -19,7 +19,11 @@
             <div class="col-xl-12 col-lg-10 col-md-8">
                 <div class="card mb-3">
                     <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
-                        <h6 class="mb-0 fw-bold">Student Information</h6>
+                        <h6 class="mb-0 fw-bold">Teacher's Information</h6>
+                        <div class="col-md-1">
+                            <a href="#" wire:navigate class="btn btn-outline-primary">
+                                <span class="fa fa-download"> Download</span></a>
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

@@ -3,6 +3,9 @@
 use App\Livewire\Admin\Account\AdminCredentials;
 use App\Livewire\Admin\Account\AdminProfile;
 use App\Livewire\Admin\AdminHome;
+use App\Livewire\Admin\Departments\AddDepartment;
+use App\Livewire\Admin\Departments\EditDepartment;
+use App\Livewire\Admin\Departments\ListDepartment;
 use App\Livewire\Admin\Students\AddStudent;
 use App\Livewire\Admin\Students\EditStudent;
 use App\Livewire\Admin\Students\ListStudent;
@@ -75,5 +78,13 @@ Route::group([
         Route::get('add', AddTeacher::class)->name('admin.teacher.add');
         Route::get('edit/{teacherId}', EditTeacher::class)->name('admin.teacher.edit');
         Route::get('list', ListTeacher::class)->name('admin.teacher.list');
+    });
+
+    Route::group([
+        'prefix' => 'departments'
+    ],function (){
+        Route::get('add', AddDepartment::class)->name('admin.department.add');
+        Route::get('edit/{departmentId}', EditDepartment::class)->name('admin.department.edit');
+        Route::get('list', ListDepartment::class)->name('admin.department.list');
     });
 });
