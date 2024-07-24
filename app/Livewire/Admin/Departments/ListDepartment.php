@@ -6,11 +6,14 @@ use App\Models\Departments;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
-use PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class ListDepartment extends Component
 {
-    use WithPagination,LivewireAlert;
+    use WithPagination, LivewireAlert;
+
+    public $department;
     protected $paginationTheme = 'bootstrap';
 
     public $perPage = 10;
@@ -24,30 +27,29 @@ class ListDepartment extends Component
         $department = Departments::findOrFail($id);
         $department->delete();
 
-        $this->alert('success', 'Success', [
+        $this->alert('success', 'Department Deleted Successfully', [
             'position' => 'center',
             'timer' => 3000,
             'toast' => false,
-            'text' => 'Department Deleted Successfully',
             'timerProgressBar' => true,
         ]);
+
         $this->resetPage();
     }
-//
-//    public function downloadPDF()
-//    {
-//        $departments = Departments::all();
-//        $pdf = PDF::loadView('admin.departments.pdf', compact('departments'));
-//
-//        return response()->streamDownload(
-//            fn () => print($pdf->output()),
-//            "departments.pdf"
-//        );
-//    }
+
+    public function generatePdf(): StreamedResponse
+    {
+        $departments = Departments::all();
+        $pdf = Pdf::loadView('department-pdf', compact('departments'));
+
+        return response()->streamDownload(function () use ($pdf) {
+            echo $pdf->stream();
+        }, 'departments.pdf');
+    }
+
     public function render()
     {
-        return view('livewire.admin.departments.list-department',[
-            'departments' => Departments::paginate($this->perPage)
-        ]);
+        $departments = Departments::paginate($this->perPage);
+        return view('livewire.admin.departments.list-department', compact('departments'));
     }
 }

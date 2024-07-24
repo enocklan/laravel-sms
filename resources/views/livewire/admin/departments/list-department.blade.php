@@ -18,8 +18,8 @@
                     <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
                         <h6 class="mb-0 fw-bold">List of Departments</h6>
                         <div class="col-md-1">
-                            <a href="#" wire:navigate class="btn btn-outline-primary">
-                                <span class="fa fa-download"> Download</span></a>
+                            <a href="#" wire:click="generatePdf" class="btn btn-outline-primary">
+                                <span class="fa fa-download"> Export</span></a>
                         </div>
                     </div>
                     <div class="card-body">

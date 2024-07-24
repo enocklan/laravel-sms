@@ -9,7 +9,7 @@
         </a>
         <!-- Menu: main ul -->
         <ul class="menu-list flex-grow-1 mt-3">
-            <li><a class="m-link" href="{{route('home')}}"><i class="icofont-home fs-5"></i> <span>Dashboard</span></a></li>
+            <li><a class="m-link" href="{{route('home')}}"><i class="icofont-dashboard fs-5"></i> <span>Dashboard</span></a></li>
 
             <li class="collapsed">
                 <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu-account" href="#">
@@ -23,7 +23,7 @@
 
             <li class="collapsed">
                 <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu-students" href="#">
-                    <i class="icofont-student-alt fs-5"></i> <span>Students</span> <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span></a>
+                    <i class="icofont-graduate-alt fs-5"></i> <span>Students</span> <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span></a>
                 <!-- Menu: Sub menu ul -->
                 <ul class="sub-menu collapse" id="menu-students">
                     <li><a class="ms-link" href="{{ route('admin.student.add') }}">Add Student</a></li>
@@ -55,12 +55,11 @@
 
             <li class="collapsed">
                 <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu-classes" href="#">
-                    <i class="icofont-ui-copy fs-5"></i> <span>Classes</span> <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span></a>
+                    <i class="icofont-ui-copy fs-5"></i> <span>Subjects/Courses</span> <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span></a>
                 <!-- Menu: Sub menu ul -->
                 <ul class="sub-menu collapse" id="menu-classes">
-                    <li><a class="ms-link" href="#">Classes List</a></li>
-                    <li><a class="ms-link" href="#">Add Class</a></li>
-                    <li><a class="ms-link" href="#">Edit Class</a></li>
+                    <li><a class="ms-link" href="#">Add Courses</a></li>
+                    <li><a class="ms-link" href="#">List Courses</a></li>
                 </ul>
             </li>
 
@@ -82,6 +81,16 @@
                     <li><a class="ms-link" href="#">Student Reports</a></li>
                     <li><a class="ms-link" href="#">Class Reports</a></li>
                     <li><a class="ms-link" href="#}">Teacher Reports</a></li>
+                </ul>
+            </li>
+            <li class="collapsed">
+                <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu-departments" href="#">
+                    <i class="icofont-ui-home fs-5"></i> <span>Hostels</span>
+                    <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span>
+                </a>
+                <ul class="sub-menu collapse" id="menu-departments">
+                    <li><a class="ms-link" href="{{ route('admin.department.add') }}">Add Hostel</a></li>
+                    <li><a class="ms-link" href="{{ route('admin.department.list') }}">List Hostel</a></li>
                 </ul>
             </li>
         </ul>

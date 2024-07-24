@@ -13,7 +13,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, SoftDeletes, HasUuids;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes, HasUuids,SoftDeletes;
 
     protected $keyType = 'string';
     public $incrementing = false;

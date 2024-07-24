@@ -55,9 +55,9 @@ class EditDepartment extends Component
             $this->file->store('files');
         }
         $this->alert('success', 'Success', [
-            'position' => 'top',
+            'position' => 'center',
             'timer' => 3000,
-            'toast' => true,
+            'toast' => false,
             'text' => 'Department Updated Successfully',
             'timerProgressBar' => true,
         ]);

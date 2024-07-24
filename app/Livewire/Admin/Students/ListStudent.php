@@ -43,6 +43,11 @@ class ListStudent extends Component
         }
     }
 
+//    public function generatePdf($studentId): void()
+//    {
+//
+//    }
+
     public function render()
     {
         $students = User::paginate(10);
