@@ -4,6 +4,7 @@ namespace App\Livewire\Admin;
 
 use App\Models\Admin;
 use App\Models\Departments;
+use App\Models\Hostel;
 use App\Models\Teacher;
 use App\Models\User;
 use Livewire\Component;
@@ -14,6 +15,7 @@ class AdminHome extends Component
     public $teacherCount;
     public $adminCount;
     public $departmentCount;
+    public $hostelCount;
 
     public function mount(): void
     {
@@ -21,6 +23,7 @@ class AdminHome extends Component
         $this->teacherCount = Teacher::count();
         $this->adminCount = Admin::count();
         $this->departmentCount = Departments::count();
+        $this->hostelCount = Hostel::count();
     }
 
 

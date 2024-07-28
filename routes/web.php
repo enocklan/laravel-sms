@@ -6,6 +6,9 @@ use App\Livewire\Admin\AdminHome;
 use App\Livewire\Admin\Departments\AddDepartment;
 use App\Livewire\Admin\Departments\EditDepartment;
 use App\Livewire\Admin\Departments\ListDepartment;
+use App\Livewire\Admin\Hostels\AddHostel;
+use App\Livewire\Admin\Hostels\EditHostel;
+use App\Livewire\Admin\Hostels\ListHostel;
 use App\Livewire\Admin\Students\AddStudent;
 use App\Livewire\Admin\Students\EditStudent;
 use App\Livewire\Admin\Students\ListStudent;
@@ -86,5 +89,13 @@ Route::group([
         Route::get('add', AddDepartment::class)->name('admin.department.add');
         Route::get('edit/{departmentId}', EditDepartment::class)->name('admin.department.edit');
         Route::get('list', ListDepartment::class)->name('admin.department.list');
+    });
+
+    Route::group([
+        'prefix' => 'hostels'
+    ],function (){
+        Route::get('add', AddHostel::class)->name('admin.hostel.add');
+        Route::get('edit/{id}', EditHostel::class)->name('admin.hostel.edit');
+        Route::get('list', ListHostel::class)->name('admin.hostel.list');
     });
 });

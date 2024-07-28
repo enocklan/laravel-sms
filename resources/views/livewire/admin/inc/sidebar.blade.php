@@ -84,13 +84,13 @@
                 </ul>
             </li>
             <li class="collapsed">
-                <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu-departments" href="#">
+                <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu-hostels" href="#">
                     <i class="icofont-ui-home fs-5"></i> <span>Hostels</span>
                     <span class="arrow icofont-rounded-down ms-auto text-end fs-5"></span>
                 </a>
-                <ul class="sub-menu collapse" id="menu-departments">
-                    <li><a class="ms-link" href="{{ route('admin.department.add') }}">Add Hostel</a></li>
-                    <li><a class="ms-link" href="{{ route('admin.department.list') }}">List Hostel</a></li>
+                <ul class="sub-menu collapse" id="menu-hostels">
+                    <li><a class="ms-link" href="{{ route('admin.hostel.add') }}">Add Hostel</a></li>
+                    <li><a class="ms-link" href="{{ route('admin.hostel.list') }}">List Hostel</a></li>
                 </ul>
             </li>
         </ul>

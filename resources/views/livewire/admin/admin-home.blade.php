@@ -119,11 +119,11 @@
                                     <div class="card">
                                         <div class="card-body py-xl-4 py-3 d-flex flex-wrap align-items-center justify-content-between">
                                             <div class="left-info">
-                                                <span class="text-muted">BOM</span>
-                                                <div><span class="fs-6 fw-bold me-2">185</span></div>
+                                                <span class="text-muted"><b>Hostels</b></span>
+                                                <div><span class="fs-6 fw-bold me-2">{{$hostelCount}}</span></div>
                                             </div>
                                             <div class="right-icon">
-                                                <i class="icofont-calculator-alt-2 fs-3 color-danger"></i>
+                                                <i class="icofont-ui-home fs-3 color-light-success"></i>
                                             </div>
                                         </div>
                                     </div>

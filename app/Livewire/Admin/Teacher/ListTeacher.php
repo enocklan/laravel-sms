@@ -3,11 +3,13 @@
 namespace App\Livewire\Admin\Teacher;
 
 use App\Models\Teacher;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Exception;
 use Illuminate\Support\Facades\Log;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class ListTeacher extends Component
 {
@@ -15,72 +17,36 @@ class ListTeacher extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-    public $teacherId;
-    public $name;
-    public $email;
-    public $employee_id;
-    public $isEditing = false;
 
-    protected $rules = [
-        'name' => 'required|string|max:255',
-        'email' => 'required|email|unique:teachers,email',
-        'employee_id' => 'required|string|max:255|unique:teachers,employee_id',
-    ];
-
-    public function mount()
+    public function generatePdf(): StreamedResponse
     {
-        $this->resetInputFields();
-    }
+        try {
+            // Retrieve all teachers
+            $teachers = Teacher::all();
+            $pdf = Pdf::loadView('teachers-pdf', compact('teachers'));
+            return response()->streamDownload(function () use ($pdf) {
+                echo $pdf->stream();
+            }, 'Teachers.pdf');
 
-    public function resetInputFields()
-    {
-        $this->teacherId = null;
-        $this->name = '';
-        $this->email = '';
-        $this->employee_id = '';
-        $this->isEditing = false;
-    }
-
-    public function edit($id)
-    {
-        $teacher = Teacher::findOrFail($id);
-        $this->teacherId = $teacher->id;
-        $this->name = $teacher->name;
-        $this->email = $teacher->email;
-        $this->employee_id = $teacher->employee_id;
-        $this->isEditing = true;
-    }
-
-    public function update()
-    {
-        $this->validate();
-
-        if ($this->teacherId) {
-            $teacher = Teacher::find($this->teacherId);
-            $teacher->update([
-                'name' => $this->name,
-                'email' => $this->email,
-                'employee_id' => $this->employee_id,
-            ]);
-
-            $this->alert('success', 'Teacher updated successfully', [
-                'position' => 'center',
+        } catch (Exception $e) {
+            Log::error('Error generating PDF: '.$e->getMessage());
+            return response()->json(['error' => 'Failed to generate PDF'], 500);
+        } finally {
+            $this->alert('success','PDF downloaded Successfully', [
+                'position' => 'top',
                 'timer' => 3000,
-                'toast' => false,
-                'timerProgressBar' => true,
+                'toast' => true,
+                'timeProgressBar' => true,
             ]);
-
-            $this->resetInputFields();
-            $this->resetPage();
         }
     }
 
-    public function delete($id): void
+    public function delete($employee_id): void
     {
         try {
-            $teacher = Teacher::findOrFail($id);
-            Log::info('Teacher to delete:', ['teacher' => $teacher]);
-            $teacher->delete();
+            $teacher = Teacher::where('employee_id', $employee_id)->firstOrFail();
+            Log::info('Teacher to delete: ', ['teacher_id' => $teacher->employee_id]);
+            Teacher::where('employee_id', $employee_id)->delete();
 
             $this->alert('success', 'Teacher deleted successfully', [
                 'position' => 'center',
